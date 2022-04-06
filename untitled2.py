@@ -17,6 +17,23 @@ Created on Sun Apr  3 12:52:25 2022
 	      
 #Find: Velocity A2 & B2 , Angle A2 & B2
 
+def cal():
+    va1x = V1*m.cos(a1)
+    va1y = V1*m.sin(a1)
+    vb1x = V2*m.cos(a2)
+    vb1y = V2*m.sin(a2)
+    
+    va2x = (m1*va1x + m2*vb1x - m2*e1*(va1x-vb1x))/(m1+m2)
+    vb2x = va2x + e1*(va1x-vb1x)
+    
+    va2y = va1y
+    vb2y = vb1y
+    
+    va2 = m.sqrt(va2x**2 + va2y**2)
+    vb2 = m.sqrt(vb2x**2 + vb2y**2)
+
+
+
 #use GUI to ask user for the givens
 #create window
 window = tk.Tk()
