@@ -1,4 +1,5 @@
 #CourseProject
+#counter= 1
 
 #test 3
 #CourseProject
@@ -26,15 +27,15 @@ def cal():
     v2 = float(V2.get())
     A1 = float(a1.get())
     A2 = float(a2.get())
-    E1 = float(e.get())
+    E = float(e.get())
     
-    va1x = V1*m.cos(a1)
-    va1y = V1*m.sin(a1)
-    vb1x = V2*m.cos(a2)
-    vb1y = V2*m.sin(a2)
+    va1x = v1*m.cos(m.radians(A1))
+    va1y = v1*m.sin(m.radians(A1))
+    vb1x = v2*m.cos(m.radians(A2))
+    vb1y = v2*m.sin(m.radians(A2))
     
-    va2x = (m1*va1x + m2*vb1x - m2*e*(va1x-vb1x))/(m1+m2)
-    vb2x = va2x + e*(va1x-vb1x)
+    va2x = (M1*va1x + M2*vb1x - M2*E*(va1x-vb1x))/(M1+M2)
+    vb2x = va2x + E*(va1x-vb1x)
     
     va2y = va1y
     vb2y = vb1y
@@ -42,8 +43,8 @@ def cal():
     angle1 = m.atan(va2x/va2y)
     angle2 = m.atan(vb2x/vb2y)
     
-    va2 = m.sqrt(va2x**2 + va2y**2)
-    vb2 = m.sqrt(vb2x**2 + vb2y**2)
+    va2 = m.sqrt(m.radians(va2x**2 + va2y**2))
+    vb2 = m.sqrt(m.radians(vb2x**2 + vb2y**2))
     
     va2 = str(va2)
     vb2 = str(vb2)
