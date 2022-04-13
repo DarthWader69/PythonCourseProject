@@ -32,10 +32,13 @@ def cal():
     va1x = v1*m.cos(m.radians(A1))
     va1y = v1*m.sin(m.radians(A1))
     vb1x = v2*m.cos(m.radians(A2))
-    vb1y = v2*m.sin(m.radians(A2))
+    vb1y = v2*m.sin(m.radians(A2))	
     
     vb2x = ((-va1x*(1+E))-((vb1x*((M2/M1)-E))))/((-M2/M1)-1)
     va2x = -E*(va1x-vb1x) + vb2x
+ 
+    va2x = (M1*va1x + M2*vb1x + M2*E*(va1x-vb1x))/(M1+M2)
+    vb2x = -E*(va1x-vb1x) + va2x
     
     va2y = va1y
     vb2y = vb1y
