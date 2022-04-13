@@ -46,8 +46,8 @@ def cal():
     angle1 = m.degrees(angle1)
     angle2 = m.degrees(angle2)
     
-    va2 = m.sqrt(m.radians(va2x**2 + va2y**2))
-    vb2 = m.sqrt(m.radians(vb2x**2 + vb2y**2))
+    va2 = m.sqrt(m.(va2x**2 + va2y**2))
+    vb2 = m.sqrt(m.(vb2x**2 + vb2y**2))
     
     va2 = str(va2)
     vb2 = str(vb2)
