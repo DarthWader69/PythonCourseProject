@@ -1,5 +1,5 @@
 #CourseProject
-#counter= 2
+#counter= 3
 
 #test 3
 #CourseProject
@@ -20,7 +20,6 @@ import math as m
 
 def cal():
     
-    
     M1 = float(m1.get())
     M2 = float(m2.get())
     v1 = float(V1.get())
@@ -32,26 +31,23 @@ def cal():
     va1x = v1*m.cos(m.radians(A1))
     va1y = v1*m.sin(m.radians(A1))
     vb1x = v2*m.cos(m.radians(A2))
-    vb1y = v2*m.sin(m.radians(A2))	
+    vb1y = v2*m.sin(m.radians(A2))
     
-    vb2x = ((-va1x*(1+E))-((vb1x*((M2/M1)-E))))/((-M2/M1)-1)
-    va2x = -E*(va1x-vb1x) + vb2x
- 
-    va2x = (M1*va1x + M2*vb1x + M2*E*(va1x-vb1x))/(M1+M2)
-    vb2x = -E*(va1x-vb1x) + va2x
-    
+    va2x = -((M1*va1x + M2*vb1x + M2*E*(va1x-vb1x))/(M1+M2))
+    vb2x = E*(va1x-vb1x) + va2x
+      
     va2y = va1y
     vb2y = vb1y
-    
-    angle1 = m.atan(va2x/va2y)
-    angle2 = m.atan(vb2x/vb2y)
+        
+    angle1 = m.atan(va2y/va2x)
+    angle2 = m.atan(vb2y/vb2x)
 
-    angle1 = m.degrees(angle1)
+    angle1 = m.degrees(angle1)+180
     angle2 = m.degrees(angle2)
-    
-    va2 = m.sqrt(m.(va2x**2 + va2y**2))
-    vb2 = m.sqrt(m.(vb2x**2 + vb2y**2))
-    
+       
+    va2 = m.sqrt(va2x**2 + va2y**2)
+    vb2 = m.sqrt(vb2x**2 + vb2y**2)
+        
     va2 = str(va2)
     vb2 = str(vb2)
     angle1 = str(angle1)
